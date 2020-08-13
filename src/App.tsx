@@ -1,15 +1,12 @@
 import React from 'react';
 
+import './assets/styles/global.css'
+import Card from './components/card';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hello
-        </p>
-      </header>
-    </div>
-  );
+    <Card />
+  )
 }
 
 export default App;
