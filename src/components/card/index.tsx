@@ -1,6 +1,5 @@
 import React from 'react';
 import ImageForArticle from '../../assets/images/drawers.jpg'
-import ButtonShare from '../../assets/images/icon-share.svg'
 import IconFacebook from '../../assets/images/icon-facebook.svg'
 import IconTwitter from '../../assets/images/icon-twitter.svg'
 import IconPinterest from '../../assets/images/icon-pinterest.svg'
@@ -39,7 +38,7 @@ function Card() {
                     <section className="card-article-info-perfil-social">
                         <section className="perfil-social-content">
                             <p className="perfil-social-content-text">
-
+                                SHARE
                             </p>
                             <img src={IconFacebook} alt="Ícone Facebook"/>
                             <img src={IconTwitter} alt="Ícone Twitter"/>
@@ -47,7 +46,7 @@ function Card() {
                         </section>
                     </section>
                     <button className="card-article-info-perfil-btn">
-                        <img src={ButtonShare} alt="botão para compartilhar"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg>
                     </button>
                 </section>
             </section>

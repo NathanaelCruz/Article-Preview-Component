@@ -32,3 +32,10 @@ button,
 textarea {
     font: 500 1.3rem Manrope;
 }
+
+button:active,
+button:focus {
+    border: 0;
+    outline: 0;
+    box-shadow: 0 0 0 0.15rem hsl(210, 46%, 95%);
+}
