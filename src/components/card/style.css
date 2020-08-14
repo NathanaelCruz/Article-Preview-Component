@@ -88,11 +88,13 @@ strong {
     background-color: hsl(217, 19%, 35%);
     position: absolute;
     top: 0;
-    width: 100%;
+    right: 0;
+    width: 0%;
     height: 100%;
-    padding-left: 2rem;
+    padding-left: 0rem;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .perfil-social-content {
@@ -113,4 +115,13 @@ strong {
 
 .card-article-info-perfil-btn.active svg path {
     fill: #fff;
+}
+
+.card-article-info-perfil-btn.active svg path,
+.perfil-social-content svg,
+.card-article-info-perfil-btn.active,
+.card-article-info-perfil-btn {
+    -webkit-transition: 0.2s 300ms ease-in;
+    -o-transition: 0.2s 300ms ease-in;
+    transition: 0.2s 300ms ease-in;
 }
