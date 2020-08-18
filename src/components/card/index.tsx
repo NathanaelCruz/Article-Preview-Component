@@ -4,7 +4,6 @@ import ImageForArticle from '../../assets/images/drawers.jpg'
 import IconFacebook from '../../assets/images/icon-facebook.svg'
 import IconTwitter from '../../assets/images/icon-twitter.svg'
 import IconPinterest from '../../assets/images/icon-pinterest.svg'
-import AvatarPerfil from '../../assets/images/avatar-michelle.jpg'
 
 import './style.css'
 
@@ -16,23 +15,37 @@ const animationButton = () => {
 const animationSocialMedia = () => {
 
     let cardArticlePerfilSocialMedia = $(".card-article-info-perfil-social")
+    let widthAnimationforSocialMedia = (window.screen.width < 767) ? '100%' : '53%'
     cardArticlePerfilSocialMedia.toggleClass('active-social')
 
     if(cardArticlePerfilSocialMedia.hasClass('active-social')){
+
         $(".card-article-info-perfil-social").animate({
-            width: '100%',
-            'padding-left': '2rem'
+            width: widthAnimationforSocialMedia,
+            'padding-left': '2rem',
           }, 1000, "linear")
+
     } else{
         $(".card-article-info-perfil-social").animate({
             width: '0%',
-            'padding-left': '0rem'
+            'padding-left': '0rem',
           }, 1000, "linear")
     }
     animationButton()
 }
 
-function Card() {
+interface ArticlePreviewProps {
+    title: string,
+    body: string,
+    nameUser: string,
+    date: string,
+    avatar: string,
+    facebookLink: string,
+    twitterLink: string,
+    pinterestLink: string
+}
+
+const ArticlePreview: React.FunctionComponent<ArticlePreviewProps> = (props) => {
     return (
         <section className="card-article">
             <section className="card-article-image">
@@ -41,22 +54,23 @@ function Card() {
             <section className="card-article-info">
                 <section className="card-article-info-details">     
                     <h2 className="card-article-info-details-title">
-                        Shift the overall look and fell by adding these wonderful touches to furniture in your home
+                        {props.title}
                     </h2>
 
                     <p className="card-article-info-details-body">
-                        Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete.
+                        {props.body}
                     </p>
                 </section>
                 <section className="card-article-info-perfil">
                     <section className="card-article-info-perfil-user">
-                        <img src={AvatarPerfil} alt="Imagem do perfil"/>
+                        
+                        <img src={props.avatar} alt="Imagem do perfil"/>
                         <section className="card-article-info-perfil-user-info">
                             <strong className="perfil-user-name">
-                                Michelle Appleton
+                                {props.nameUser}
                             </strong>
                             <p className="perfil-user-data">
-                                28 Jun 2020
+                                {props.date}
                             </p>
                         </section>
                     </section>
@@ -65,9 +79,15 @@ function Card() {
                             <p className="perfil-social-content-text">
                                 SHARE
                             </p>
-                            <img src={IconFacebook} alt="Ícone Facebook"/>
-                            <img src={IconTwitter} alt="Ícone Twitter"/>
-                            <img src={IconPinterest} alt="Ícone Pinterest"/>
+                            <a href={props.facebookLink}>
+                                <img src={IconFacebook} alt="Ícone Facebook"/>
+                            </a>
+                            <a href={props.twitterLink}>
+                                <img src={IconTwitter} alt="Ícone Twitter"/>
+                            </a>
+                            <a href={props.pinterestLink}>
+                                <img src={IconPinterest} alt="Ícone Pinterest"/>
+                            </a>
                         </section>
                     </section>
                     <button className="card-article-info-perfil-btn" onClick={animationSocialMedia}>
@@ -79,4 +99,4 @@ function Card() {
     )
 }
 
-export default Card;
+export default ArticlePreview;
