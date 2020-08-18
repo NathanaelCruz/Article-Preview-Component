@@ -79,13 +79,13 @@ const ArticlePreview: React.FunctionComponent<ArticlePreviewProps> = (props) => 
                             <p className="perfil-social-content-text">
                                 SHARE
                             </p>
-                            <a href={props.facebookLink}>
+                            <a href={props.facebookLink} target="_blank" rel="noopener noreferrer">
                                 <img src={IconFacebook} alt="Ícone Facebook"/>
                             </a>
-                            <a href={props.twitterLink}>
+                            <a href={props.twitterLink} target="_blank" rel="noopener noreferrer">
                                 <img src={IconTwitter} alt="Ícone Twitter"/>
                             </a>
-                            <a href={props.pinterestLink}>
+                            <a href={props.pinterestLink} target="_blank" rel="noopener noreferrer">
                                 <img src={IconPinterest} alt="Ícone Pinterest"/>
                             </a>
                         </section>
