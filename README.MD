@@ -12,3 +12,5 @@ For use, you will need the following steps.
 
 
 The composition of the challenge was carried out as a component in order to be reused within the development process.
+
+View Deploy in [Vercel](https://article-preview-component-phi-five.vercel.app/)
